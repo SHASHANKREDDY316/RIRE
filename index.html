@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RIRE Studio - Girls Accessories</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Lora&family=Playfair+Display&display=swap');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Lora', serif;
+      background: url('https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #4a2c3d;
+      text-align: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      animation: fadeIn 1s ease-in;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(248, 225, 232, 0.8);
+      z-index: -1;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      background: linear-gradient(90deg, #d9a7b7, #c48a9f);
+      padding: 40px 20px;
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 10;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3em;
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 1.1em;
+      display: flex;
+      align-items: center;
+      transition: all 0.4s ease;
+      position: relative;
+      padding: 5px 10px;
+    }
+
+    nav a i { margin-right: 12px; }
+
+    nav a:hover {
+      color: #f4d8dd;
+      transform: scale(1.15) translateY(-2px);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: -5px;
+      left: 50%;
+      background-color: #fff;
+      transition: width 0.4s ease, left 0.4s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .container {
+      padding: 60px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .slideshow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .slide {
+      width: 100%;
+      margin: 20px 0;
+      background: rgba(244, 216, 221, 0.95);
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      opacity: 0.6;
+      cursor: pointer;
+    }
+
+    .slide:hover {
+      transform: scale(1.1);
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .slide img {
+      max-width: 100%;
+      border-radius: 20px;
+      border: 4px solid #e8c3d0;
+      transition: transform 0.3s ease;
+    }
+
+    .slide:hover img {
+      transform: scale(1.15);
+    }
+
+    .slide h3 {
+      color: #8a4a5b;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5em;
+      margin: 20px 0;
+      font-weight: 700;
+    }
+
+    .slide p {
+      color: #6b3d4d;
+      font-size: 1em;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .slide a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      background: #c48a9f;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-family: 'Lora', serif;
+    }
+
+    button {
+      background: linear-gradient(90deg, #c48a9f, #b56f85);
+      border: none;
+      padding: 14px 35px;
+      color: #fff;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: 'Lora', serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: all 0.4s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #a66b7e, #9a5a6d);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+      background: linear-gradient(90deg, #d9a7b7, #c48a9f);
+      color: #fff;
+      padding: 25px;
+      width: 100%;
+      margin-top: 40px;
+      box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.3);
+      font-size: 0.95em;
+      font-family: 'Playfair Display', serif;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2em; }
+      nav { flex-direction: column; gap: 15px; }
+      nav a { margin: 5px 0; }
+      .slideshow { max-width: 100%; }
+      .slide { margin: 20px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>RIRE <i>Studio</i></h1>
+    <nav>
+      <a href="#home"><i class="fas fa-home"></i> Home</a>
+      <a href="#profile"><i class="fas fa-user"></i> Profile</a>
+      <a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      <a href="keychain.html"><i class="fas fa-key"></i> Key Chains</a>
+      <a href="bracelet.html"><i class="fas fa-gem"></i> Bracelets</a>
+      <a href="candles.html"><i class="fas fa-fire"></i> Candles</a>
+      <a href="painting.html"><i class="fas fa-paint-brush"></i> Paintings</a>
+      <a href="pottery.html"><i class="fas fa-mug-hot"></i> Pottery</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="slideshow" id="slideshow">
+      <div class="slide">
+        <img src="keychains.jpg" alt="keychains">
+        <br>
+        <br>
+        <h3>Customized Key Chains</h3>
+        <p>Unique styled key chains.</p>
+        <a href="keychain.html">Explore Key Chains</a>
+      </div>
+      <div class="slide">
+        <img src="bracelet.webp" alt="Customized Bracelet">
+        <br>
+        <br>
+        <h3>Customized Bracelet</h3>
+        <p>Beautifully designed bracelets personalized for you.</p>
+        <a href="bracelet.html">Explore Bracelets</a>
+      </div>
+      <div class="slide">
+        <img src="candles.jpg" alt="Customized Scented Candles">
+        <br>
+        <br>
+        <h3>Customized Scented Candles</h3>
+        <p>Luxurious candles with your chosen scents and designs.</p>
+        <a href="candles.html">Explore Candles</a>
+      </div>
+      <div class="slide">
+        <img src="paint.jpg" alt="Canvas Painting">
+        <br>
+        <br>
+        <h3>Canvas Painting</h3>
+        <p>Artistic canvas paintings with a personal touch.</p>
+        <a href="painting.html">Explore Paintings</a>
+      </div>
+      <div class="slide">
+        <img src="pottery-items.webp" alt="Aesthetic Pottery Items">
+        <br>
+        <br>
+        <h3>Aesthetic Pottery Items</h3>
+        <p>Elegant and stylish pottery pieces for decoration.</p>
+        <a href="pottery.html">Explore Pottery</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 RIRE Studio. All rights reserved.</p>
+  </footer>
+</body>
+</html>
